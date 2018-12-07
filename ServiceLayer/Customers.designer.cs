@@ -22,60 +22,60 @@ namespace ServiceLayer
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Customers")]
-	public partial class CustomersDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Customer")]
+	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCustomers(Customers instance);
-    partial void UpdateCustomers(Customers instance);
-    partial void DeleteCustomers(Customers instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
     #endregion
 		
-		public CustomersDataContext() : 
-				base(global::ServiceLayer.Properties.Settings.Default.CustomersConnectionString, mappingSource)
+		public DataClasses1DataContext() : 
+				base(global::ServiceLayer.Properties.Settings.Default.CustomerConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CustomersDataContext(string connection) : 
+		public DataClasses1DataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CustomersDataContext(System.Data.IDbConnection connection) : 
+		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CustomersDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public CustomersDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Customers> Customers
+		public System.Data.Linq.Table<Customer> Customers
 		{
 			get
 			{
-				return this.GetTable<Customers>();
+				return this.GetTable<Customer>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Table]")]
-	public partial class Customers : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -110,7 +110,7 @@ namespace ServiceLayer
     partial void OnPhoneChanged();
     #endregion
 		
-		public Customers()
+		public Customer()
 		{
 			OnCreated();
 		}

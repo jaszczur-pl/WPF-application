@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie4", "Zadanie4\Zadanie4.csproj", "{C96693E2-CA4E-4C7C-94DF-448B616B9C41}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "Zadanie4\GUI.csproj", "{C96693E2-CA4E-4C7C-94DF-448B616B9C41}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{EC1F3162-BCE6-4DF8-A188-731DBE4D7315}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{ABD5AFAC-2EB4-4BA2-8C63-BAF67743BE58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EC1F3162-BCE6-4DF8-A188-731DBE4D7315}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC1F3162-BCE6-4DF8-A188-731DBE4D7315}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC1F3162-BCE6-4DF8-A188-731DBE4D7315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD5AFAC-2EB4-4BA2-8C63-BAF67743BE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD5AFAC-2EB4-4BA2-8C63-BAF67743BE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD5AFAC-2EB4-4BA2-8C63-BAF67743BE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD5AFAC-2EB4-4BA2-8C63-BAF67743BE58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

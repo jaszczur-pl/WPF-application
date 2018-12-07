@@ -8,9 +8,18 @@ namespace ServiceLayer
 {
     public class DataRepository
     {
-        private CustomersDataContext context = new CustomersDataContext();
+        private static DataClasses1DataContext context = new DataClasses1DataContext();
 
-        public void AddCustomer(Customers customer) {
+        public static List<Customer> SelectAllCustomers() {
+
+            List<Customer> allCustomers =
+                 (from customer in context.Customers
+                  select customer).ToList();
+
+            return allCustomers;
+        }
+
+        public static void AddCustomer(Customer customer) {
 
             context.Customers.InsertOnSubmit(customer);
 
@@ -20,14 +29,14 @@ namespace ServiceLayer
             catch (Exception e) { }
         }
 
-        public void DeleteCustomer(int customerID) {
+        public static void DeleteCustomer(int customerID) {
 
             var matchedCustomers =
                 from customers in context.Customers
                 where customers.Id == customerID
                 select customers;
 
-            foreach (Customers customer in matchedCustomers) {
+            foreach (Customer customer in matchedCustomers) {
                 context.Customers.DeleteOnSubmit(customer);
             }
 
@@ -37,14 +46,14 @@ namespace ServiceLayer
             catch (Exception e) { }
         }
 
-        public void UpdateCustomer(Customers cust) {
+        public static void UpdateCustomer(Customer cust) {
 
             var matchedCustomers =
                 from customers in context.Customers
                 where customers.Id == cust.Id
                 select customers;
 
-            foreach (Customers customer in matchedCustomers) {
+            foreach (Customer customer in matchedCustomers) {
                 customer.Name = cust.Name;
                 customer.Surname = cust.Surname;
                 customer.Age = cust.Age;
@@ -57,13 +66,5 @@ namespace ServiceLayer
             catch { }
         }
 
-        public List<Customers> SelectAllCustomers() {
-
-            List<Customers> allCustomers =
-                 (from customers in context.Customers
-                  select customers).ToList();
-
-            return allCustomers;
-        }
     }
 }

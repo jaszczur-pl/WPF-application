@@ -33,5 +33,16 @@ namespace ServiceLayer.Properties {
                 return ((string)(this["CustomersConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Customer.mdf;" +
+            "Integrated Security=True")]
+        public string CustomerConnectionString {
+            get {
+                return ((string)(this["CustomerConnectionString"]));
+            }
+        }
     }
 }
