@@ -12,26 +12,26 @@ namespace GUI.ViewModel
 {
     class CustomerViewModel : ViewModelBase
     {
-        private ObservableCollection<Customer> customers;
-        private Customer currentCustomer;
-        private CustomerModel customerModel;
+        private ObservableCollection<Customer> _customers;
+        private Customer _currentCustomer;
+        private CustomerModel _customerModel;
 
         public ObservableCollection<Customer> Customers {
 
-            get { return customers; }
-            set { customers = value; RaisePropertyEventChanged(); }
+            get { return _customers; }
+            set { _customers = value; RaisePropertyEventChanged(); }
         }
 
         public Customer CurrentCustomer {
 
-            get { return currentCustomer; }
-            set { currentCustomer = value; RaisePropertyEventChanged(); }
+            get { return _currentCustomer; }
+            set { _currentCustomer = value; RaisePropertyEventChanged(); }
         }
 
         public CustomerModel CustomerModel {
 
-            get { return customerModel; }
-            set { customerModel = value; Customers = new ObservableCollection<Customer>(value.Customer); }
+            get { return _customerModel; }
+            set { _customerModel = value; Customers = new ObservableCollection<Customer>(value.Customer); }
         }
     }
 }

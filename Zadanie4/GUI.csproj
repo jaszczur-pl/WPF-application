@@ -78,6 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MinimalMVVM\DelegateCommand.cs" />
     <Compile Include="MinimalMVVM\ViewModelBase.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
