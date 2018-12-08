@@ -7,7 +7,7 @@ using ServiceLayer;
 
 namespace GUI.Model
 {
-    public class CustomerView
+    public class CustomerModel
     {
         public IEnumerable<Customer> Customer {
             get { return DataRepository.SelectAllCustomers(); }
