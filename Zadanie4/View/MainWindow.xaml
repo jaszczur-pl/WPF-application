@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:Zadanie4"
         xmlns:ViewModel="clr-namespace:GUI.ViewModel" x:Class="Zadanie4.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400">
+        Title="MainWindow" Height="468" Width="400">
     <Window.DataContext>
         <ViewModel:CustomerViewModel/>
     </Window.DataContext>
     <Grid>
-        <ListView ItemsSource="{Binding Customers}" SelectedItem="{Binding CurrentCustomer}" Margin="0,0,0,150">
+        <ListView ItemsSource="{Binding Customers}" SelectedItem="{Binding CurrentCustomer}" Margin="0,0,0,252">
             <ListView.View>
                 <GridView x:Name="GridView">
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="ID"
@@ -23,7 +23,21 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Get Data" HorizontalAlignment="Left" Margin="42,140,0,0" VerticalAlignment="Top" Width="75" Command="{Binding FetchCustomerCommand}"/>
+
+        <Button Content="Get Data" HorizontalAlignment="Left" Margin="38,350,0,0" VerticalAlignment="Top" Width="75" Command="{Binding FetchCustomerCommand}"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="38,390,0,0" VerticalAlignment="Top" Width="75" Command="{Binding UpdateCustomerCommand}"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="150,350,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCustomerCommand}"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="150,390,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DeleteCustomerCommand}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="38,209,0,0" TextWrapping="Wrap" Text="{Binding CurrentCustomer.Name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="38,309,0,0" TextWrapping="Wrap" Text="{Binding CurrentCustomer.Email}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="38,259,0,0" TextWrapping="Wrap" Text="{Binding CurrentCustomer.Age}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="208,209,0,0" TextWrapping="Wrap" Text="{Binding CurrentCustomer.Surname}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="208,309,0,0" TextWrapping="Wrap" Text="{Binding CurrentCustomer.Phone}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="38,185,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="208,185,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="38,235,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="38,285,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Phone number" HorizontalAlignment="Left" Margin="208,285,0,0" VerticalAlignment="Top" Width="96"/>
     </Grid>
 
 </Window>
