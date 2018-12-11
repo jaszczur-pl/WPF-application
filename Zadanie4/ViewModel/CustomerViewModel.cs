@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GUI.MinimalMVVM;
 using GUI.Model;
 using ServiceLayer;
+using DataRepositoryLayer;
 
 namespace GUI.ViewModel
 {

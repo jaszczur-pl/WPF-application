@@ -62,7 +62,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Customers.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DataRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
