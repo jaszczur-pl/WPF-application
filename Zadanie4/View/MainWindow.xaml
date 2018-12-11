@@ -12,16 +12,15 @@
     </Window.DataContext>
     <Grid>
         <ListView ItemsSource="{Binding Customers}" SelectedItem="{Binding CurrentCustomer}" Margin="0,0,0,252">
-            <ListView.View>
-                <GridView x:Name="GridView">
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="ID"
-                                Width="50"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Name"
-                                Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" Header="Surname"
-                                Width="150"/>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id, StringFormat=ID: {0}}"/>
+                        <TextBlock Text="{Binding Name, StringFormat=Name: {0}}"/>
+                        <TextBlock Text="{Binding Surname, StringFormat=Surname: {0}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
         <Button Content="Get Data" HorizontalAlignment="Left" Margin="38,350,0,0" VerticalAlignment="Top" Width="75" Command="{Binding FetchCustomerCommand}"/>
@@ -38,6 +37,7 @@
         <Label Content="Age" HorizontalAlignment="Left" Margin="38,235,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="38,285,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="Phone number" HorizontalAlignment="Left" Margin="208,285,0,0" VerticalAlignment="Top" Width="96"/>
+        
     </Grid>
 
 </Window>
