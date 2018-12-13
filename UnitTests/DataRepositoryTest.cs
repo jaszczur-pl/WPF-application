@@ -8,7 +8,7 @@ using System.Linq;
 namespace UnitTests
 {
     [TestClass]
-    public class ServiceLayerTest
+    public class DataRepositoryTest
     {
 
         [TestMethod]

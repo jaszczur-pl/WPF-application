@@ -14,12 +14,12 @@
             <ColumnDefinition Width="331*"/>
             <ColumnDefinition Width="57*"/>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,33,0,0" TextWrapping="Wrap" Text="{Binding NewCustomerName}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,33,0,0" TextWrapping="Wrap" Text="{Binding NewCustomerSurname}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,83,0,0" TextWrapping="Wrap" Text="{Binding NewCustomerID}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,83,0,0" TextWrapping="Wrap" Text="{Binding NewCustomerAge}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,133,0,0" TextWrapping="Wrap" Text="{Binding NewCustomerEmail}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,133,0,0" TextWrapping="Wrap" Text="{Binding NewCustomerPhone}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,33,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,33,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerSurname, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,83,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerID, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,83,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerAge, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,133,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerEmail, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,133,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerPhone, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="44,7,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="Surname" HorizontalAlignment="Left" Margin="214,7,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="44,57,0,0" VerticalAlignment="Top" Width="64"/>
