@@ -8,7 +8,10 @@ namespace GUI.MinimalMVVM
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void RaisePropertyEventChanged(string propertyName = null) {
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         }
+
     }
 }
