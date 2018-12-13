@@ -28,6 +28,7 @@ namespace DataRepositoryLayer
                 context.SubmitChanges();
             }
             catch (Exception e) { }
+            
         }
 
         public static void DeleteCustomer(int customerID) {
@@ -67,5 +68,19 @@ namespace DataRepositoryLayer
             catch { }
         }
 
+        public static bool CheckIfIDIsUnique(int currentID) {
+            bool isIDUnique = true;
+
+            var matchedCustomer =
+                from customers in context.Customers
+                where customers.Id == currentID
+                select customers;
+
+            if (matchedCustomer.Any()) {
+                isIDUnique = false;
+            }
+
+            return isIDUnique;
+        }
     }
 }
