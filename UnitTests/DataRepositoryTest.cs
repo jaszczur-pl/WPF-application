@@ -1,8 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceLayer;
 using DataRepositoryLayer;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace UnitTests
@@ -11,13 +9,50 @@ namespace UnitTests
     public class DataRepositoryTest
     {
 
+        [TestInitialize]
+        public void TestInitialization() {
+
+
+            Customer cust1 = new Customer() {
+                Id = 1000,
+                Name = "Jan",
+                Surname = "Kowalski",
+                Age = 30,
+                Email = "jkowalski@gmail.com",
+                Phone = "600100200",
+            };
+
+            Customer cust2 = new Customer() {
+                Id = 2000,
+                Name = "Mateusz",
+                Surname = "Nowak",
+                Age = 45,
+                Email = "mn@gmail.com",
+                Phone = "600100200",
+            };
+
+            Customer cust3 = new Customer() {
+                Id = 3000,
+                Name = "Ilona",
+                Surname = "Grabarczyk",
+                Age = 34,
+                Email = "ig@gmail.com",
+                Phone = "600100200",
+            };
+
+            DataRepository.AddCustomer(cust1);
+            DataRepository.AddCustomer(cust2);
+            DataRepository.AddCustomer(cust3);
+
+        }
+
         [TestMethod]
         public void AddCustomerTest() {
 
             int oldCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
             Customer cust = new Customer() {
-                Id = 1000,
+                Id = 5000,
                 Name = "Jan",
                 Surname = "Kowalski",
                 Age = 30,
@@ -57,16 +92,7 @@ namespace UnitTests
         [TestMethod]
         public void UpdateCustomerTest() {
 
-            Customer cust = new Customer() {
-                Id = 1000,
-                Name = "Jan",
-                Surname = "Kowalski",
-                Age = 30,
-                Email = "jkowalski@gmail.com",
-                Phone = "600100200",
-            };
 
-            DataRepository.AddCustomer(cust);
             int oldCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
             Customer newCust = new Customer() {
@@ -80,7 +106,7 @@ namespace UnitTests
             
             DataRepository.UpdateCustomer(newCust);
 
-            Customer updatedCustomer = DataRepository.SelectAllCustomers().Where(c => c.Id == cust.Id).First();
+            Customer updatedCustomer = DataRepository.SelectAllCustomers().Where(c => c.Id == newCust.Id).First();
             int newCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
             Assert.AreEqual(oldCustomersNumber, newCustomersNumber);

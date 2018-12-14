@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DataRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
       <Project>{ec1f3162-bce6-4df8-a188-731dbe4d7315}</Project>
       <Name>ServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Zadanie4\GUI.csproj">
+      <Project>{c96693e2-ca4e-4c7c-94df-448b616b9c41}</Project>
+      <Name>GUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

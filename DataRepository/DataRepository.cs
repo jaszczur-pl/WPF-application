@@ -14,8 +14,8 @@ namespace DataRepositoryLayer
         public static List<Customer> SelectAllCustomers() {
 
             List<Customer> allCustomers =
-                 (from customer in context.Customers
-                  select customer).ToList();
+                 (from customers in context.Customers
+                  select customers).ToList();
 
             return allCustomers;
         }

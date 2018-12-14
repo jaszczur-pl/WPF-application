@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace GUI.ViewModel
 {
-    class CustomerViewModel : ViewModelBase
+    public class CustomerViewModel : ViewModelBase
     {
         private ObservableCollection<Customer> _customers;
         private Customer _currentCustomer;
