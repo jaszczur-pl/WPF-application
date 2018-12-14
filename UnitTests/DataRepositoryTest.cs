@@ -43,7 +43,13 @@ namespace UnitTests
             DataRepository.AddCustomer(cust1);
             DataRepository.AddCustomer(cust2);
             DataRepository.AddCustomer(cust3);
+        }
 
+        [TestCleanup]
+        public void TestCleanup() {
+            DataRepository.DeleteCustomer(1000);
+            DataRepository.DeleteCustomer(2000);
+            DataRepository.DeleteCustomer(3000);
         }
 
         [TestMethod]
@@ -70,19 +76,9 @@ namespace UnitTests
         [TestMethod]
         public void DeleteCustomerTest() {
 
-            Customer cust = new Customer() {
-                Id = 10,
-                Name = "Jan",
-                Surname = "Kowalski",
-                Age = 30,
-                Email = "jkowalski@gmail.com",
-                Phone = "600100200",
-            };
-
-            DataRepository.AddCustomer(cust);
             int oldCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
-            DataRepository.DeleteCustomer(10);
+            DataRepository.DeleteCustomer(1000);
             int newCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
             //check if number of records is different
