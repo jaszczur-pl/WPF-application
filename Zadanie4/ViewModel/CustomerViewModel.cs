@@ -7,6 +7,7 @@ using ServiceLayer;
 using DataRepositoryLayer;
 using System.Windows;
 using System.Linq;
+using GUI.View;
 
 namespace GUI.ViewModel
 {
@@ -29,6 +30,7 @@ namespace GUI.ViewModel
             DeleteCustomerCommand = new DelegateCommand(DeleteCustomer);
             UpdateCustomerCommand = new DelegateCommand(UpdateCustomer);
             SaveChangesCommand = new DelegateCommand(SaveChanges);
+            ShowPopupCommand = new DelegateCommand(ShowPopup);
         }
 
         public DelegateCommand FetchCustomerCommand { get; private set; }
@@ -36,6 +38,7 @@ namespace GUI.ViewModel
         public DelegateCommand UpdateCustomerCommand { get; private set; }
         public DelegateCommand DeleteCustomerCommand { get; private set; }
         public DelegateCommand SaveChangesCommand { get; private set; }
+        public DelegateCommand ShowPopupCommand { get; private set; }
 
         public ObservableCollection<Customer> Customers {
 
@@ -137,6 +140,11 @@ namespace GUI.ViewModel
 
         public void SaveChanges() {
             Task.Run(() => { DataRepository.SaveChanges(); });
+        }
+
+        public void ShowPopup() {
+            Popup popup = new Popup();
+            popup.Show();
         }
 
     }

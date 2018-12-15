@@ -25,7 +25,7 @@
 
         <Button Content="Get Data" HorizontalAlignment="Left" Margin="38,350,0,0" VerticalAlignment="Top" Width="88" Command="{Binding FetchCustomerCommand}"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="38,390,0,0" VerticalAlignment="Top" Width="88" Command="{Binding UpdateCustomerCommand}"/>
-        <Button Content="New Customer" HorizontalAlignment="Left" Margin="150,350,0,0" VerticalAlignment="Top" Width="93" Click="ShowPopup"/>
+        <Button Content="New Customer" HorizontalAlignment="Left" Margin="150,350,0,0" VerticalAlignment="Top" Width="93" Command="{Binding ShowPopupCommand}"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="150,390,0,0" VerticalAlignment="Top" Width="93" Command="{Binding DeleteCustomerCommand}"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="270,350,0,0" VerticalAlignment="Top" Width="88" Command="{Binding SaveChangesCommand}"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="38,209,0,0" TextWrapping="Wrap" Text="{Binding Path=CurrentCustomer.Name, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
