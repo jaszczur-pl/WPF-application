@@ -27,6 +27,7 @@ namespace GUI.ViewModel
             AddCustomerCommand = new DelegateCommand(AddCustomer);
             DeleteCustomerCommand = new DelegateCommand(DeleteCustomer);
             UpdateCustomerCommand = new DelegateCommand(UpdateCustomer);
+            SaveChangesCommand = new DelegateCommand(SaveChanges);
         }
 
         public DelegateCommand FetchCustomerCommand { get; private set; }
@@ -122,6 +123,10 @@ namespace GUI.ViewModel
 
         public void UpdateCustomer() {
             Task.Run(() => { DataRepository.UpdateCustomer(_currentCustomer); });
+        }
+
+        public void SaveChanges() {
+            Task.Run(() => { DataRepository.SaveChanges(); });
         }
 
     }

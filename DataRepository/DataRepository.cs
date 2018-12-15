@@ -24,11 +24,6 @@ namespace DataRepositoryLayer
 
             context.Customers.InsertOnSubmit(customer);
 
-            try {
-                context.SubmitChanges();
-            }
-            catch (Exception e) { }
-            
         }
 
         public static void DeleteCustomer(int customerID) {
@@ -41,11 +36,6 @@ namespace DataRepositoryLayer
             foreach (Customer customer in matchedCustomers) {
                 context.Customers.DeleteOnSubmit(customer);
             }
-
-            try {
-                context.SubmitChanges();
-            }
-            catch (Exception e) { }
         }
 
         public static void UpdateCustomer(Customer cust) {
@@ -62,10 +52,6 @@ namespace DataRepositoryLayer
                 customer.Email = cust.Email;
             }
 
-            try {
-                context.SubmitChanges();
-            }
-            catch { }
         }
 
         public static bool CheckIfIDIsUnique(int currentID) {
@@ -81,6 +67,16 @@ namespace DataRepositoryLayer
             }
 
             return isIDUnique;
+        }
+
+        public static void SaveChanges() {
+
+            try {
+                context.SubmitChanges();
+            }
+            catch (Exception e){
+            }
+
         }
     }
 }
