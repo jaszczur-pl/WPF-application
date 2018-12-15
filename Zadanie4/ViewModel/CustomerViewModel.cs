@@ -6,6 +6,7 @@ using GUI.Model;
 using ServiceLayer;
 using DataRepositoryLayer;
 using System.Windows;
+using System.Linq;
 
 namespace GUI.ViewModel
 {
@@ -96,23 +97,24 @@ namespace GUI.ViewModel
 
         public void AddCustomer() {
 
-            if (DataRepository.CheckIfIDIsUnique(_newCustomerID))
-            {
+            if (DataRepository.CheckIfIDIsUnique(_newCustomerID) && !_newCustomerName.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c)) 
+                && !_newCustomerSurname.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c)) 
+                && !_newCustomerPhone.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c))) {
 
-                Customer customer = new Customer()
-                {
-                    Id = _newCustomerID,
-                    Name = _newCustomerName,
-                    Surname = _newCustomerSurname,
-                    Age = _newCustomerAge,
-                    Phone = _newCustomerPhone,
-                    Email = _newCustomerEmail
-                };
+                    Customer customer = new Customer()
+                    {
+                        Id = _newCustomerID,
+                        Name = _newCustomerName,
+                        Surname = _newCustomerSurname,
+                        Age = _newCustomerAge,
+                        Phone = _newCustomerPhone,
+                        Email = _newCustomerEmail
+                    };
 
-                Task.Run(() => { DataRepository.AddCustomer(customer); });
+                    Task.Run(() => { DataRepository.AddCustomer(customer); });
             }
             else {
-                MessageBox.Show("Incorrect ID number","Error");
+                MessageBox.Show("Incorrect data","Error");
             }
         }
 
@@ -122,7 +124,15 @@ namespace GUI.ViewModel
         }
 
         public void UpdateCustomer() {
-            Task.Run(() => { DataRepository.UpdateCustomer(_currentCustomer); });
+            if (!_currentCustomer.Name.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c))
+                && !_currentCustomer.Surname.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c))
+                && !_currentCustomer.Phone.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c))) {
+
+                    Task.Run(() => { DataRepository.UpdateCustomer(_currentCustomer); });
+            }
+            else {
+                MessageBox.Show("Incorrect data", "Error");
+            }
         }
 
         public void SaveChanges() {
