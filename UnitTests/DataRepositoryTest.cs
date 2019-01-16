@@ -67,6 +67,7 @@ namespace UnitTests
             };
 
             DataRepository.AddCustomer(cust);
+
             int newCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
             //check if number of records is greater than 0
@@ -77,8 +78,10 @@ namespace UnitTests
         public void DeleteCustomerTest() {
 
             int oldCustomersNumber = DataRepository.SelectAllCustomers().Count;
+            int firstCustID = DataRepository.SelectAllCustomers().First().Id;
 
-            DataRepository.DeleteCustomer(1000);
+            DataRepository.DeleteCustomer(firstCustID);
+
             int newCustomersNumber = DataRepository.SelectAllCustomers().Count;
 
             //check if number of records is different

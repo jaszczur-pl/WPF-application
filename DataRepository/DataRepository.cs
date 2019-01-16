@@ -23,7 +23,7 @@ namespace DataRepositoryLayer
         public static void AddCustomer(Customer customer) {
 
             context.Customers.InsertOnSubmit(customer);
-
+            SaveChanges();
         }
 
         public static void DeleteCustomer(int customerID) {
@@ -36,6 +36,8 @@ namespace DataRepositoryLayer
             foreach (Customer customer in matchedCustomers) {
                 context.Customers.DeleteOnSubmit(customer);
             }
+
+            SaveChanges();
         }
 
         public static void UpdateCustomer(Customer cust) {
@@ -52,6 +54,7 @@ namespace DataRepositoryLayer
                 customer.Email = cust.Email;
             }
 
+            SaveChanges();
         }
 
         public static bool CheckIfIDIsUnique(int currentID) {
