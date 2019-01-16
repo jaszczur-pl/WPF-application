@@ -27,6 +27,5 @@
         <Label Content="E-mail" HorizontalAlignment="Left" Margin="44,107,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="Phone number" HorizontalAlignment="Left" Margin="214,107,0,0" VerticalAlignment="Top" Width="96"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="44,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCustomerCommand}"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="140,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SaveChangesCommand}"/>
     </Grid>
 </Window>

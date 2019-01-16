@@ -127,9 +127,9 @@ namespace GUI.ViewModel
         }
 
         public void UpdateCustomer() {
-            if (!_currentCustomer.Name.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c))
-                && !_currentCustomer.Surname.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c))
-                && !_currentCustomer.Phone.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c))) {
+            if (!_currentCustomer.Name.Any(c => char.IsDigit(c))
+                && !_currentCustomer.Surname.Any(c => char.IsDigit(c))
+                && !_currentCustomer.Phone.Any(c => char.IsLetter(c))) {
 
                     Task.Run(() => { DataRepository.UpdateCustomer(_currentCustomer); });
             }
